@@ -1,6 +1,9 @@
 // Lists Controller
-
-ListsController = {
+function ListsController() {
+  this.list = new List();
+}
+ListsController.prototype = {
+  constructor: ListsController,
   init: function() {
     
     var $addListForm = $('#add_list'),

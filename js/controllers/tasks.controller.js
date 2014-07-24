@@ -1,6 +1,9 @@
 // Tasks Controller
-
-TasksController = {
+function TasksController(){
+  this.task = new Task();
+}
+TasksController.prototype = {
+  constructor: TasksController,
   init: function() {
     
     var $addTaskForm = $('#add_task'),
