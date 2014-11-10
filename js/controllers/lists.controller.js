@@ -1,2 +1,3 @@
+'use strict';
 // Lists Controller
 
