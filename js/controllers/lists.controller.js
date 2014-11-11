@@ -1,3 +1,4 @@
+'use strict';
 // Lists Controller
 function ListsController() {
   this.$addListForm = $('#add_list'),
@@ -37,4 +38,4 @@ ListsController.prototype.init = function() {
   this.hideTaskForm();
   this.addListFormListener();
   this.destroyListLiveEventListener();
-}
+};

@@ -1,4 +1,6 @@
+'use strict';
 // Tasks Controller
+
 function TasksController(){
   // this.task = new Task();
 }

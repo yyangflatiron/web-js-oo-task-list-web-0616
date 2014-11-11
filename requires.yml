@@ -1,0 +1,13 @@
+# A list of javascript files required for the project, in dependency order
+javascripts:
+  files:
+    - lib/jquery-2.1.1.min.js
+    - js/model/task.js
+    - js/model/list.js
+    - js/controllers/tasks.controller.js
+    - js/controllers/lists.controller.js
+  specs:
+    - spec/task.spec.js
+    - spec/task.controller.spec.js
+    - spec/list.spec.js
+    - spec/list.controller.spec.js
