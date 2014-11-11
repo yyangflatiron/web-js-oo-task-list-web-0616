@@ -9,6 +9,6 @@ javascripts:
   specs:
     - spec/spec.helper.js
     - spec/task.spec.js
-    - spec/task.controller.spec.js
     - spec/list.spec.js
-    - spec/list.controller.spec.js
+    - spec/tasks.controller.spec.js
+    - spec/lists.controller.spec.js
