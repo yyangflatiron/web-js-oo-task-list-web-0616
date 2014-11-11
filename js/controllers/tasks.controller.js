@@ -1,10 +1,10 @@
 'use strict';
 // Tasks Controller
 function TasksController(){
-  this.$addTaskForm = $('#add_task'),
-  this.$selectListMenu = $('#select_list'),
-  this.$taskDescriptionInput = $('#task_description'),
-  this.$taskPriorityInput = $('#task_priority'),
+  this.$addTaskForm = $('#add_task');
+  this.$selectListMenu = $('#select_list');
+  this.$taskDescriptionInput = $('#task_description');
+  this.$taskPriorityInput = $('#task_priority');
   this.$wrapper = $('#wrapper');
 }
 
@@ -28,9 +28,8 @@ TasksController.prototype.destroyListLiveEventListener = function(){
         taskId = parseInt($(this).parent('li').data('id')),
         list = List.all[listId];
         list.tasks.splice(taskId, 1, null);
-      $(this).parent('li').remove();
-    });
-  }
+    $(this).parent('li').remove();
+  });
 };
 
 TasksController.prototype.init = function() {

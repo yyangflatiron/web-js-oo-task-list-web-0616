@@ -1,10 +1,10 @@
 'use strict';
 // Lists Controller
 function ListsController() {
-  this.$addListForm = $('#add_list'),
-  this.$listTitleInput = $('#list_title'),
-  this.$selectListMenu = $('#select_list'),
-  this.$addTaskForm = $('#add_task'),
+  this.$addListForm = $('#add_list');
+  this.$listTitleInput = $('#list_title');
+  this.$selectListMenu = $('#select_list');
+  this.$addTaskForm = $('#add_task');
   this.$wrapper = $('#wrapper');
 }
 
