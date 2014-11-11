@@ -7,6 +7,7 @@ describe('Task Model', function() {
     beforeEach(function() {
       list = new List('Jon\'s List');
       task = new Task('Walk the dog', 'high', list);
+      emptyArr(List.all);
     });
 
     describe('description', function() {
