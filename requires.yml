@@ -11,5 +11,5 @@ javascripts:
     - spec/spec.helper.js
     - spec/task.spec.js
     - spec/list.spec.js
-    - spec/tasks.controller.spec.js
     - spec/lists.controller.spec.js
+    - spec/tasks.controller.spec.js
