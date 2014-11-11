@@ -2,8 +2,8 @@
 javascripts:
   files:
     - lib/jquery-2.1.1.min.js
-    - js/model/task.js
-    - js/model/list.js
+    - js/models/task.js
+    - js/models/list.js
     - js/controllers/tasks.controller.js
     - js/controllers/lists.controller.js
   specs:
