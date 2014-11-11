@@ -25,7 +25,7 @@ describe('List Model', function() {
     describe('title', function() {
 
       it('should be have a title when a new List is created', function() {
-        expect(list.title).toBe('Jon's List');
+        expect(list.title).toBe('Jon\'s List');
       });
     });
 
