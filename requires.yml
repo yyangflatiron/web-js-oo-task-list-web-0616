@@ -7,6 +7,7 @@ javascripts:
     - js/controllers/tasks.controller.js
     - js/controllers/lists.controller.js
   specs:
+    - spec/jasmine-jquery.js
     - spec/spec.helper.js
     - spec/task.spec.js
     - spec/list.spec.js
