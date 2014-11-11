@@ -1,5 +1,5 @@
 'use strict';
-(function(){ describe('List Model', function() {
+function(){ describe('List Model', function() {
 
   describe('Constructor Properties', function() {
 
@@ -37,4 +37,3 @@
   }); //Instance Properties
 
 }); //end List Model tests
-})();
