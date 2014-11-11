@@ -1,6 +1,6 @@
 // Tasks Controller
 function TasksController(){
-  this.task = new Task();
+  // this.task = new Task();
 }
 TasksController.prototype = {
   constructor: TasksController,
@@ -13,6 +13,7 @@ TasksController.prototype = {
       $wrapper = $('#wrapper');
 
     $addTaskForm.submit(function(event) {
+      debugger
       event.preventDefault();
       var listId = parseInt($selectListMenu.val()),
           taskDescription = $taskDescriptionInput.val(),
