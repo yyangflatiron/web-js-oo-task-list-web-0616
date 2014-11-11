@@ -9,19 +9,19 @@ describe('Lists Controller', function() {
 
   describe('creating a new List Controller', function() {
     it('should have $addListForm property holds selected \'#add_list\'', function() {
-      expect(listsController.$addListForm).toBe($('#add_list'));
+      expect(listsController.$addListForm).toEqual($('#add_list'));
     });
     it('should have $listTitleInput property holds selected \'#list_title\'', function() {
-      expect(listsController.$listTitleInput).toBe($('#list_title'));
+      expect(listsController.$listTitleInput).toEqual($('#list_title'));
     });
     it('should have $selectListMenu property holds selected \'#select_list\'', function() {
-      expect(listsController.$selectListMenu).toBe($('#select_list'));
+      expect(listsController.$selectListMenu).toEqual($('#select_list'));
     });
     it('should have $addTaskForm property holds selected \'#add_task\'', function() {
-      expect(listsController.$addTaskForm).toBe($('#add_task'));
+      expect(listsController.$addTaskForm).toEqual($('#add_task'));
     });
     it('should have $wrapper property holds selected \'#wrapper\'', function() {
-      expect(listsController.$wrapper).toBe($('#wrapper'));
+      expect(listsController.$wrapper).toEqual($('#wrapper'));
     });
   });
 });
