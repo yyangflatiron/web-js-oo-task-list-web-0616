@@ -1,37 +1,39 @@
 'use strict';
 // Tasks Controller
-
 function TasksController(){
-  // this.task = new Task();
+  this.$addTaskForm = $('#add_task'),
+  this.$selectListMenu = $('#select_list'),
+  this.$taskDescriptionInput = $('#task_description'),
+  this.$taskPriorityInput = $('#task_priority'),
+  this.$wrapper = $('#wrapper');
 }
-TasksController.prototype = {
-  constructor: TasksController,
-  init: function() {
-    
-    var $addTaskForm = $('#add_task'),
-      $selectListMenu = $('#select_list'),
-      $taskDescriptionInput = $('#task_description'),
-      $taskPriorityInput = $('#task_priority'),
-      $wrapper = $('#wrapper');
 
-    $addTaskForm.submit(function(event) {
-      debugger
-      event.preventDefault();
-      var listId = parseInt($selectListMenu.val()),
-          taskDescription = $taskDescriptionInput.val(),
-          taskPriority = $taskPriorityInput.val(),
-          task = new Task(taskDescription, taskPriority, List.all[listId]);
-      task.build();
-      $taskDescriptionInput.val('');
-      $taskPriorityInput.val('');
-    });
+TasksController.prototype.addTaskFormListener = function(){
+  var self = this;
+  this.$addTaskForm.submit(function(event) {
+    event.preventDefault();
+    var listId = parseInt(self.$selectListMenu.val()),
+        taskDescription = self.$taskDescriptionInput.val(),
+        taskPriority = self.$taskPriorityInput.val(),
+        task = new Task(taskDescription, taskPriority, List.all[listId]);
+    task.build();
+    self.$taskDescriptionInput.val('');
+    self.$taskPriorityInput.val('');
+  });
+};
 
-    $wrapper.on('click', '.destroy-task', function(){ //live event listener
-      var listId = parseInt($(this).parents('ul').data('id')),
-          taskId = parseInt($(this).parent('li').data('id')),
-          list = List.all[listId];
-          list.tasks.splice(taskId, 1, null);
+TasksController.prototype.destroyListLiveEventListener = function(){
+  this.$wrapper.on('click', '.destroy-task', function(){ //live event listener
+    var listId = parseInt($(this).parents('ul').data('id')),
+        taskId = parseInt($(this).parent('li').data('id')),
+        list = List.all[listId];
+        list.tasks.splice(taskId, 1, null);
       $(this).parent('li').remove();
     });
   }
+};
+
+TasksController.prototype.init = function() {
+  this.addTaskFormListener();
+  this.destroyListLiveEventListener();
 };
