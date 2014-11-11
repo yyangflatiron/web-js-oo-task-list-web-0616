@@ -8,7 +8,19 @@ describe('Lists Controller', function() {
 
   describe('creating a new List Controller', function() {
     it('should have $addListForm property holds selected \'#add_list\'', function() {
-      expect(listController.$addListForm).toBe($'#add_list');
+      expect(listController.$addListForm).toBe($('#add_list'));
+    });
+    it('should have $listTitleInput property holds selected \'#list_title\'', function() {
+      expect(listController.$listTitleInput).toBe($('#list_title'));
+    });
+    it('should have $selectListMenu property holds selected \'#select_list\'', function() {
+      expect(listController.$selectListMenu).toBe($('#select_list'));
+    });
+    it('should have $addTaskForm property holds selected \'#add_task\'', function() {
+      expect(listController.$addTaskForm).toBe($('#add_task'));
+    });
+    it('should have $wrapper property holds selected \'#wrapper\'', function() {
+      expect(listController.$wrapper).toBe($('#wrapper'));
     });
   });
 });
