@@ -33,8 +33,8 @@ describe('Task Model', function() {
         var anotherTask = new Task('give the dog a bath', 'high', list),
             expectedString1 = '<li data-id="0"><button class="destroy-task">x</button> Walk the dog, high</li>',
             expectedString2 = '<li data-id="1"><button class="destroy-task">x</button> give the dog a bath, high</li>';
-        expect(task.el()).toEqual(expectedString1);
-        expect(anotherTask.el()).toEqual(expectedString2);
+        expect(task.liEl()).toEqual(expectedString1);
+        expect(anotherTask.liEl()).toEqual(expectedString2);
       });
 
       it('the build method should append the el string the tasks corresponding list', function() {
