@@ -30,6 +30,8 @@ describe('Tasks Controller', function(){
   describe('#init (note you can always use #init as a delegator...)', function() {
     beforeEach(function(){
       deleteLists(); // deletes any lists and their tasks
+      emptyArr(List.all); // for deleting instances between tests
+      emptyArr(Task.all); // for deleting instances between tests
       tasksController.init();
       // creates new list
       $('#add_list input:first').val('grocerries');
@@ -61,16 +63,12 @@ describe('Tasks Controller', function(){
         expect($('#list-1 li').length).toEqual(1);
       });
 
-      it('should created an li within a ul with a data-id', function() {
-        expect($('#list-0 li').first().data().id).toEqual(0);
-      });
-
       it('should add a task to the correct list', function() {
         $('select').val('1')
         $('#task_description').val('do this thing');
         $('#task_priority').val('high');
         submitTaskForm();
-        expect($('#list-0 li').length).toEqual(0);
+        expect($('#list-0 li').length).toEqual(1);
         expect($('#list-1 li').length).toEqual(1);
       });
 
@@ -90,14 +88,9 @@ describe('Tasks Controller', function(){
           $('#list-1 li').first().find('button').click();
           expect($('#list-1 li').length).toEqual(0);
         });
-      });
+      }); // ends deleting task
 
-      // $('#add_list input:first').val('grocerries');
-      // submitListForm();
-      // $('#add_task select').val('1')
-      // expect($('#lists .list').length).toEqual(1);
-      // expect($('#lists .list').find('h2').text()).toEqual('x grocerries');
-    });
+    }); // ends creating new tasks
 
-  });
+  }); // ends init function
 });
