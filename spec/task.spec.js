@@ -37,9 +37,9 @@ describe('Task Model', function() {
     });
 
     it('should keep track of all instances in an all property', function() {
-      list = new List('Jon\'s List');
-      task1 = new Task('Walk the dog', 'high', list);
-      task2 = new Task('Find the dog...', 'very high', list);
+      var list = new List('Jon\'s List'),
+          task1 = new Task('Walk the dog', 'high', list),
+          task2 = new Task('Find the dog...', 'very high', list);
       expect(Task.all[0]).toBe(task1);
       expect(Task.all[1]).toBe(task2);
     });
