@@ -1,5 +1,5 @@
 'use strict';
-function(){ describe('List Model', function() {
+describe('List Model', function() {
 
   describe('Instance Properties', function() {
 
@@ -8,24 +8,58 @@ function(){ describe('List Model', function() {
       emptyArr(List.all); // for deleting instances between tests
       list = new List('Jon\'s List');
     });
+    describe('Properties from initialization', function() {
+      it('should be have a title when a new List is created', function() {
+        expect(list.title).toBe('Jon\'s List');
+      });
 
-    it('should be have a title when a new List is created', function() {
-      expect(list.title).toBe('Jon\'s List');
-    });
+      it('should be assigned an autoincrementing id when a new List is created', function() {
+        var secondList = new List('Tristan\'s List');
+        expect(list.id).toBe(0);
+        expect(secondList.id).toBe(1);
+      });    
 
-    it('should be assigned an autoincrementing id when a new List is created', function() {
-      var secondList = new List('Tristan\'s List');
-      expect(list.id).toBe(0);
-      expect(secondList.id).toBe(1);
-    });    
+      it('should be assigned an empty array when a new List is created', function() {
+        expect(list.tasks).toEqual([]);
+      });      
+    }); // end Properties from Intialization
 
-    it('should be assigned an empty array when a new List is created', function() {
-      expect(list.tasks).toEqual([]);
-    });      
+    describe('creating new list elements', function() {
+      var anotherList;
+      beforeEach(function() {
+        anotherList = new List('Tristan\'s List');
+      });
+
+      it('the listEl method should create a string representing the lists\'s div', function() {
+        var expectedString1 = '<div class="list"><h2><button class="destroy-list">x</button> Jon\'s List</h2><ul id="list-0" data-id="0"></ul></div>',
+            expectedString2 = '<div class="list"><h2><button class="destroy-list">x</button> Tristan\'s List</h2><ul id="list-1" data-id="1"></ul></div>';
+        expect(list.listEl()).toEqual(expectedString1);
+        expect(anotherList.listEl()).toEqual(expectedString2);
+      });
+
+      it('the listEl method should create a string representing the lists\'s option', function() {
+        var expectedString1 = '<option value="0">Jon\'s List</option>',
+            expectedString2 = '<option value="1">Tristan\'s List</option>';
+        expect(list.optionEl()).toEqual(expectedString1);
+        expect(anotherList.optionEl()).toEqual(expectedString2);
+      });
+
+      it('the build method should append the div and option strings the lists section and select elements', function() {
+        setFixtures('<select id="select_list" name="select_list"></select><section id="lists"></section>');
+        list.build();
+        anotherList.build();
+        expect($('#select_list option').length).toEqual(2);
+        expect($('#lists div.list').length).toEqual(2);
+      });
+    }); // end creating new list elements
 
   }); //Instance Properties
 
   describe('Constructor Properties', function() {
+
+    beforeEach(function() {
+      emptyArr(List.all); // for deleting instances between tests
+    });
 
     it('should have an "all" property to hold instances of each list created', function() {
       expect(List.all).toEqual([]);

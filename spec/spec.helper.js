@@ -16,6 +16,7 @@ function preventDefaultOnForms(){
 // deletes any lists and their tasks
 function deleteLists(){
   $('#lists .list').remove();
+  $('select option').remove();
 }
 
 // submits form to create a new list
