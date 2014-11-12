@@ -11,11 +11,11 @@ function Task(description, priority, list) {
 
 Task.all = [];
 
-Task.prototype.el = function() {
+Task.prototype.liEl = function() {
   return '<li data-id="'+this.id+'"><button class="destroy-task">x</button> '+this.description+', '+this.priority+'</li>';
 };
 
 Task.prototype.build = function() {
-  $('#list-'+this.list.id).append(this.el());
+  $('#list-'+this.list.id).append(this.liEl());
 };
 
