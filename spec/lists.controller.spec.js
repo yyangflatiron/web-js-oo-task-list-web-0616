@@ -38,22 +38,22 @@ describe('Lists Controller', function() {
 
     it('should display the add task form when a list is created', function() {
       $('#add_list input:first').val('grocerries');
-      $('#add_list').submit();
+      submitListForm();
       expect(listsController.$addTaskForm.css('display')).toEqual('block');
     });
 
     it('should have added listener for creating new lists', function() {
       $('#add_list input:first').val('grocerries');
-      $('#add_list').submit();
+      submitListForm();
       expect($('#lists .list').length).toEqual(1);
       expect($('#lists .list').find('h2').text()).toEqual('x grocerries');
     });
 
     it('should have added a live event listener for deleting lists', function() {
       $('#add_list input:first').val('grocerries');
-      $('#add_list').submit();
+      submitListForm();
       $('#add_list input:first').val('more grocerries');
-      $('#add_list').submit();
+      submitListForm();
       expect($('#lists .list').length).toEqual(2);
       $('#lists .list').first().find('h2 button').click();
       expect($('#lists .list').length).toEqual(1);
