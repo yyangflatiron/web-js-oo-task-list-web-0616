@@ -14,7 +14,7 @@ function(){ describe('List Model', function() {
 
     var list;
     beforeEach(function() {
-      emptyArr(List.all);
+      emptyArr(List.all); // for deleting instances between tests
       list = new List('Jon\'s List');
     });
 
