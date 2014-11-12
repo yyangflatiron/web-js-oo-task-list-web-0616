@@ -2,6 +2,7 @@
 javascripts:
   files:
     - js/lib/jquery-2.1.1.min.js
+    - js/lib/underscore.min.js
     - js/models/task.js
     - js/models/list.js
     - js/controllers/tasks.controller.js
