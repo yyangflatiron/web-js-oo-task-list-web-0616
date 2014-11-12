@@ -1,7 +1,7 @@
 ---
 languages: JavaScript, js
 tags: oo, object orientation, jQuery, event listeners, DOM, 
-resources: 5
+resources: 4
 level: advanced
 ---
 
@@ -31,6 +31,5 @@ For comparison here is a live example of the finished app [linked here](http://f
 ## Resources
  * [jQuery](http://jquery.com/)
  * [jQuery `#on`](http://api.jquery.com/on/)
- * [jQuery `#live`](http://api.jquery.com/live/)
  * [underscore](http://underscorejs.org/)
  * [Finshed Example of App Here](http://flatiron-school-curriculum.github.io/web-js-oo-task-list/)
