@@ -17,3 +17,13 @@ function preventDefaultOnForms(){
 function deleteLists(){
   $('#lists .list').remove();
 }
+
+// submits form to create a new list
+function submitListForm(){
+  $('#add_list').submit();
+}
+
+// submits form to create a new task
+function submitTaskForm(){
+  $('#add_task').submit();
+}
