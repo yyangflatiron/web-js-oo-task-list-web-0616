@@ -9,15 +9,15 @@ function List(title) {
 }
 List.prototype = {
   constructor: List,
-  listEle: function() {
+  listEl: function() {
     return '<div class="list"><h2><button class="destroy-list">x</button> '+this.title+'</h2><ul id="list-'+this.id+'" data-id="'+this.id+'"></ul></div>';
   },
-  optionEle: function() {
+  optionEl: function() {
     return '<option value="'+this.id+'">'+this.title+'</option>';
   },
   build: function() {
-     $('#lists').append(this.listEle());
-     $('#select_list').append(this.optionEle());
+     $('#lists').append(this.listEl());
+     $('#select_list').append(this.optionEl());
   }
 };
 List.all = [];
