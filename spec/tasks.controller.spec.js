@@ -84,7 +84,7 @@ describe('Tasks Controller', function(){
           expect($('#list-1 li').length).toEqual(2);
           $('#list-1 li').first().find('button').click();
           expect($('#list-1 li').length).toEqual(1);
-          expect($('#list-1 li').first().data().id).toEqual(1);
+          expect($('#list-1 li').first().data().id).toEqual(2);
           $('#list-1 li').first().find('button').click();
           expect($('#list-1 li').length).toEqual(0);
         });
