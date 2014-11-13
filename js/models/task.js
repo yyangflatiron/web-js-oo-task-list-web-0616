@@ -4,7 +4,7 @@ function Task(description, priority, list) {
   this.description = description;
   this.priority = priority;
   this.list = list;
-  this.id = this.list.tasks.length;
+  this.id = this.constructor.all.length;
   this.list.tasks.push(this);
   this.constructor.all.push(this);
 }
