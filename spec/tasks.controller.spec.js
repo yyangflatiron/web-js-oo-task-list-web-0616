@@ -10,19 +10,19 @@ describe('Tasks Controller', function(){
   });
 
   describe('creating a new TasksController', function() {
-    it('should have a $addTaskForm property that holds selected \'#add_task\'', function() {
+    it('should have a $addTaskForm property that holds a selected element with the id \'#add_task\'', function() {
       expect(tasksController.$addTaskForm).toEqual($('#add_task'));
     });
-    it('should have a $taskDescriptionInput property that holds selected \'#task_description\'', function() {
+    it('should have a $taskDescriptionInput property that holds a selected element with the id \'#task_description\'', function() {
       expect(tasksController.$taskDescriptionInput).toEqual($('#task_description'));
     });
-    it('should have a $selectListMenu property that holds selected \'#select_list\'', function() {
+    it('should have a $selectListMenu property that holds a selected element with the id \'#select_list\'', function() {
       expect(tasksController.$selectListMenu).toEqual($('#select_list'));
     });
-    it('should have a $taskPriorityInput property that holds selected \'#task_priority\'', function() {
+    it('should have a $taskPriorityInput property that holds a selected element with the id \'#task_priority\'', function() {
       expect(tasksController.$taskPriorityInput).toEqual($('#task_priority'));
     });
-    it('should have a $wrapper property that holds selected \'#wrapper\'', function() {
+    it('should have a $wrapper property that holds a selected element with the id \'#wrapper\'', function() {
       expect(tasksController.$wrapper).toEqual($('#wrapper'));
     });
   });
@@ -31,7 +31,6 @@ describe('Tasks Controller', function(){
     beforeEach(function(){
       deleteLists(); // deletes any lists and their tasks
       emptyArr(List.all); // for deleting instances between tests
-      emptyArr(Task.all); // for deleting instances between tests
       tasksController.init();
       // creates new list
       $('#add_list input:first').val('grocerries');
@@ -63,8 +62,9 @@ describe('Tasks Controller', function(){
         expect($('#list-1 li').length).toEqual(1);
       });
 
-      describe('live event listener for deleting tasks', function() {
-        it('deleting a task only deletes itself', function() {
+
+      describe('Deleting tasks (using a live event listener)', function() {
+        it('should delete only that one task', function() {
           $('select').val('1')
           $('#task_description').val('do this thing');
           $('#task_priority').val('high');
@@ -75,9 +75,14 @@ describe('Tasks Controller', function(){
           expect($('#list-1 li').length).toEqual(2);
           $('#list-1 li').first().find('button').click();
           expect($('#list-1 li').length).toEqual(1);
-          expect($('#list-1 li').first().data().id).toEqual(2);
+          expect($('#list-1 li').first().data().id).toEqual(1);
           $('#list-1 li').first().find('button').click();
           expect($('#list-1 li').length).toEqual(0);
+        });
+
+        it('should remove the task from its list.tasks property', function() {
+          $('li[data-id="0"] button').click();
+          expect(List.all[0]['tasks']).toEqual([]);
         });
       }); // ends deleting task
 

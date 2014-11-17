@@ -6,7 +6,6 @@ describe('Task Model', function() {
     var list, task;
     beforeEach(function() {
       emptyArr(List.all); // for deleting instances between tests
-      emptyArr(Task.all); // for deleting instances between tests
       list = new List('Jon\'s List');
       task = new Task('Walk the dog', 'high', list);
     });
@@ -20,18 +19,18 @@ describe('Task Model', function() {
         expect(task.priority).toBe('high');
       });
 
-      it('should be assigned an autoincremented id when a new Task is created', function() {
-        var newTask = new Task('Walk the dog again', 'high', list);
-        expect(task.id).toBe(0);
-        expect(task.id).toBe(1);
-      });
-
       it('should be assigned to a list when a new Task is created', function() {
         expect(task.list.title).toBe('Jon\'s List');
       });
 
       it('should add itself to the list\'s tasks array', function() {
         expect(list.tasks[0]).toBe(task);
+      });
+
+      it('should be assigned an autoincremented id when a new Task is created based on the length of the list.tasks array', function() {
+        var newTask = new Task('Walk the dog again', 'high', list);
+        expect(task.id).toBe(0);
+        expect(newTask.id).toBe(1);
       });
     });
 
@@ -52,25 +51,5 @@ describe('Task Model', function() {
     }); // end creating new task elements
 
   }); //end Instance Properties
-
-  describe('Constructor Properties', function() {
-
-    beforeEach(function() {
-      emptyArr(Task.all);
-    });
-
-    it('should have an all property set to an empty array', function() {
-      expect(Task.all).toEqual([]);
-    });
-
-    it('should keep track of all instances in an all property', function() {
-      var list = new List('Jon\'s List'),
-          task1 = new Task('Walk the dog', 'high', list),
-          task2 = new Task('Find the dog...', 'very high', list);
-      expect(Task.all[0]).toBe(task1);
-      expect(Task.all[1]).toBe(task2);
-    });
-
-  }); // end Constructor Properties
 
 }); //end Task model tests

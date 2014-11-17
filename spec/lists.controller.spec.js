@@ -10,19 +10,19 @@ describe('Lists Controller', function() {
   });
 
   describe('creating a new List Controller', function() {
-    it('should have $addListForm property holds selected \'#add_list\'', function() {
+    it('should have a $addListForm property that holds a selected element with the id \'#add_list\'', function() {
       expect(listsController.$addListForm).toEqual($('#add_list'));
     });
-    it('should have $listTitleInput property holds selected \'#list_title\'', function() {
+    it('should have a $listTitleInput property that holds a selected element with the id \'#list_title\'', function() {
       expect(listsController.$listTitleInput).toEqual($('#list_title'));
     });
-    it('should have $selectListMenu property holds selected \'#select_list\'', function() {
+    it('should have a $selectListMenu property that holds a selected element with the id \'#select_list\'', function() {
       expect(listsController.$selectListMenu).toEqual($('#select_list'));
     });
-    it('should have $addTaskForm property holds selected \'#add_task\'', function() {
+    it('should have a $addTaskForm property that holds a selected element with the id \'#add_task\'', function() {
       expect(listsController.$addTaskForm).toEqual($('#add_task'));
     });
-    it('should have $wrapper property holds selected \'#wrapper\'', function() {
+    it('should have a $wrapper property that holds a selected element with the id \'#wrapper\'', function() {
       expect(listsController.$wrapper).toEqual($('#wrapper'));
     });
   });
