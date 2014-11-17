@@ -21,11 +21,17 @@ describe('Task Model', function() {
       });
 
       it('should be assigned an autoincremented id when a new Task is created', function() {
+        var newTask = new Task('Walk the dog again', 'high', list);
         expect(task.id).toBe(0);
+        expect(task.id).toBe(1);
       });
 
       it('should be assigned to a list when a new Task is created', function() {
         expect(task.list.title).toBe('Jon\'s List');
+      });
+
+      it('should add itself to the list\'s tasks array', function() {
+        expect(lists.tasks[0]).toBe(task);
       });
     });
 
