@@ -31,7 +31,7 @@ describe('Task Model', function() {
       });
 
       it('should add itself to the list\'s tasks array', function() {
-        expect(lists.tasks[0]).toBe(task);
+        expect(list.tasks[0]).toBe(task);
       });
     });
 
