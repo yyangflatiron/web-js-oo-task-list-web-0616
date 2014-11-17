@@ -10,19 +10,19 @@ describe('Tasks Controller', function(){
   });
 
   describe('creating a new TasksController', function() {
-    it('should have $addTaskForm property holds selected \'#add_task\'', function() {
+    it('should have a $addTaskForm property that holds selected \'#add_task\'', function() {
       expect(tasksController.$addTaskForm).toEqual($('#add_task'));
     });
-    it('should have $taskDescriptionInput property holds selected \'#task_description\'', function() {
+    it('should have a $taskDescriptionInput property that holds selected \'#task_description\'', function() {
       expect(tasksController.$taskDescriptionInput).toEqual($('#task_description'));
     });
-    it('should have $selectListMenu property holds selected \'#select_list\'', function() {
+    it('should have a $selectListMenu property that holds selected \'#select_list\'', function() {
       expect(tasksController.$selectListMenu).toEqual($('#select_list'));
     });
-    it('should have $taskPriorityInput property holds selected \'#task_priority\'', function() {
+    it('should have a $taskPriorityInput property that holds selected \'#task_priority\'', function() {
       expect(tasksController.$taskPriorityInput).toEqual($('#task_priority'));
     });
-    it('should have $wrapper property holds selected \'#wrapper\'', function() {
+    it('should have a $wrapper property that holds selected \'#wrapper\'', function() {
       expect(tasksController.$wrapper).toEqual($('#wrapper'));
     });
   });
@@ -54,15 +54,6 @@ describe('Tasks Controller', function(){
         expect($('#list-0 li').length).toEqual(1);
       });
 
-      it('should create a new on the correct list', function() {
-        $('select').val('1')
-        $('#task_description').val('do this thing');
-        $('#task_priority').val('high');
-        submitTaskForm();
-        expect($('#list-0 li').length).toEqual(1);
-        expect($('#list-1 li').length).toEqual(1);
-      });
-
       it('should add a task to the correct list', function() {
         $('select').val('1')
         $('#task_description').val('do this thing');
@@ -78,8 +69,8 @@ describe('Tasks Controller', function(){
           $('#task_description').val('do this thing');
           $('#task_priority').val('high');
           submitTaskForm();
-          $('#task_description').val('do this thing');
-          $('#task_priority').val('high');
+          $('#task_description').val('do this other thing');
+          $('#task_priority').val('super duper high');
           submitTaskForm();
           expect($('#list-1 li').length).toEqual(2);
           $('#list-1 li').first().find('button').click();
