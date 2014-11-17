@@ -9,7 +9,7 @@ describe('List Model', function() {
       list = new List('Jon\'s List');
     });
     describe('Properties from initialization', function() {
-      it('should be have a title when a new List is created', function() {
+      it('should have a title when a new List is created', function() {
         expect(list.title).toBe('Jon\'s List');
       });
 
