@@ -14,14 +14,17 @@ Underscore and jQuery are loaded for you.
 
 ##Requirements
 
-- The List and Task constructor keep track of instances with the `all` properties
+- The List constructor keep track of instances with the an `all` property
+  * The list instance will get an `id` from the length of the `all` array
 - List instances keeps track of their own task instances with the `tasks` property
+  * Tasks are assigned an `id` from their position in the `tasks` array
 - Model instances are responsible for creating the strings that get converted to HTML elements
 - Model instances are responsible for appending said HTML elements to the DOM via the model's instance method `build`
 - The controllers are responsible for creating new instances of their corresponding models from form inputs
 - The contollers are responsible for triggering those instances to append themselves to the DOM via the model's instance method `build`
 - The controller is responsible for deleting instances elements from the DOM
   * Tasks only need to be deleted from their list
+  * When tasks are deleted they are replaced in their list's `tasks` array with `null`
   * Lists need to be deleted from `div#lists` and from `select`
 
 ##Example
