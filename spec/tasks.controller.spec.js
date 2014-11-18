@@ -80,9 +80,9 @@ describe('Tasks Controller', function(){
           expect($('#list-1 li').length).toEqual(0);
         });
 
-        it('should remove the task from its list.tasks property', function() {
+        it('should remove the task from its list.tasks property and replace it with null', function() {
           $('li[data-id="0"] button').click();
-          expect(List.all[0]['tasks']).toEqual([]);
+          expect(List.all[0]['tasks']).toEqual([null]);
         });
       }); // ends deleting task
 
