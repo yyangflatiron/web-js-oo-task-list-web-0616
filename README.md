@@ -8,7 +8,17 @@ level: advanced
 # JS Test Driven Task List
 ## Instructions:
 
-Create an object oriented task list.  You're going to need to build a basic all front end app.  There will be no persitence.  However, you will need two models, one for List(s) and Task(s).  These models will need autoincrementing IDs as well as some "class" methods.  These models will talk to their matching controllers, ListController and TaskController.  The controllers job is to interact with the DOM (think jQuery controllers that make instances to help the views).  However your controllers will be adding the elements themselves to the DOM instead of the views.  They will do this through calling a build method on the model, which is in charge of appending the element to the screen.  Elements created will use their "ids" to set `data` properties, `id` properties, and `value` properties.
+Create an object oriented task list.  You're going to need to build a basic all front end app.  There will be no persitence.  However, you will need two models, one for List(s) and Task(s).  
+
+These models will:
+- need autoincrementing IDs as well as some "class" methods. 
+- talk to their matching controllers, ListController and TaskController.
+- will use their "ids" to set `data` properties, `id` properties, and `value` properties.
+
+The controllers will:
+- interact with the DOM (think jQuery controllers that make instances to help the views).  
+- be adding the elements themselves to the DOM instead of the views.  
+- need to call the model's build method, which returns a string of html.
 
 Underscore and jQuery are loaded for you.
 
