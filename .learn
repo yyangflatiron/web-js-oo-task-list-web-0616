@@ -1,0 +1,11 @@
+languages:
+  - JavaScript
+  - js
+tags:
+  - oo
+  - object orientation
+  - jQuery
+  - event listeners
+  - DOM,
+resources: 4
+level: advanced
