@@ -69,6 +69,7 @@ describe('Tasks Controller', function(){
           $('#task_description').val('do this thing');
           $('#task_priority').val('high');
           submitTaskForm();
+          $('select').val('1')
           $('#task_description').val('do this other thing');
           $('#task_priority').val('super duper high');
           submitTaskForm();
