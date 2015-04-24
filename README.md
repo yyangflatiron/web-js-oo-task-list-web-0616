@@ -39,10 +39,10 @@ Underscore and jQuery are loaded for you.
 
 ##Example
 
-For comparison here is a live example of the finished app [linked here](http://flatiron-school-curriculum.github.io/web-js-oo-task-list/).
+For comparison here is a live example of the finished app [linked here](http://learn-co-curriculum.github.io/web-js-oo-task-list/).
 
 ## Resources
  * [jQuery](http://jquery.com/)
  * [jQuery `#on`](http://api.jquery.com/on/)
  * [underscore](http://underscorejs.org/)
- * [Finshed Example of App Here](http://flatiron-school-curriculum.github.io/web-js-oo-task-list/)
+ * [Finshed Example of App Here](http://learn-co-curriculum.github.io/web-js-oo-task-list/)
