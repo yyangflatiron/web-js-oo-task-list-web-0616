@@ -1,10 +1,3 @@
----
-languages: JavaScript, js
-tags: oo, object orientation, jQuery, event listeners, DOM, 
-resources: 4
-level: advanced
----
-
 # JS Test Driven Task List
 ## Instructions:
 
