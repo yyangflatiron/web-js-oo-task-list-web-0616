@@ -1,7 +1,7 @@
 # JS Test Driven Task List
 ## Instructions:
 
-Create an object oriented task list.  You're going to need to build a basic all front end app.  There will be no persitence.  However, you will need two models, one for List(s) and Task(s).  
+Create an object oriented task list.  You're going to need to build a basic all front end app.  There will be no persistence. However, you will need two models, one for List(s) and Task(s).  
 
 These models will:
 - need autoincrementing IDs as well as some "class" methods. 
@@ -24,7 +24,7 @@ Underscore and jQuery are loaded for you.
 - Model instances are responsible for creating the strings that get converted to HTML elements
 - Model instances are responsible for appending said HTML elements to the DOM via the model's instance method `build`
 - The controllers are responsible for creating new instances of their corresponding models from form inputs
-- The contollers are responsible for triggering those instances to append themselves to the DOM via the model's instance method `build`
+- The controllers are responsible for triggering those instances to append themselves to the DOM via the model's instance method `build`
 - The controller is responsible for deleting instances elements from the DOM
   * Tasks only need to be deleted from their list
   * When tasks are deleted they are replaced in their list's `tasks` array with `null`
