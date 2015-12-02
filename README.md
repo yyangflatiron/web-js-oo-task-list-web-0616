@@ -39,3 +39,5 @@ For comparison here is a live example of the finished app [linked here](http://l
  * [jQuery `#on`](http://api.jquery.com/on/)
  * [underscore](http://underscorejs.org/)
  * [Finshed Example of App Here](http://learn-co-curriculum.github.io/web-js-oo-task-list/)
+
+<a href='https://learn.co/lessons/web-js-oo-task-list' data-visibility='hidden'>View this lesson on Learn.co</a>
