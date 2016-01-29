@@ -40,4 +40,4 @@ For comparison here is a live example of the finished app [linked here](http://l
  * [underscore](http://underscorejs.org/)
  * [Finshed Example of App Here](http://learn-co-curriculum.github.io/web-js-oo-task-list/)
 
-<a href='https://learn.co/lessons/web-js-oo-task-list' data-visibility='hidden'>View this lesson on Learn.co</a>
+<p data-visibility='hidden'>View <a href='https://learn.co/lessons/web-js-oo-task-list' title='JS Test Driven Task List'>JS Test Driven Task List</a> on Learn.co and start learning to code for free.</p>
